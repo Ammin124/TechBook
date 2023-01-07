@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Home Page.
+{% endblock %}
+{% block content %}
+    <div class="row">
+
+        <div class="col-3 mt-4">
+            <div>
+                <img class="rounded-circle" src="{{ user.profile.avatar.url }}" alt="">
+                <h5>{{ request.user.first_name }} {{ request.user.last_name }}</h5>
+                <p style="text-align: justify;">{{ user.profile.bio }}</p>
+                <button class="btn btn-light"><a href="{% url 'UpdateProfile' user.id %}" style="text-decoration: none;color: black">Edit Profile</a></button>
+                <hr>
+                <br>
+            </div>
+            <div>
+                {% if user.is_authenticated %}
+                    <p><a class="nav-link" href="{% url 'addPost' %}"> Add Post</a></p>
+                    <p><a class="nav-link" href="{% url 'changePass' %}"> Password Change</a></p>
+                {% endif %}
+
+            </div>
+
+        </div>
+        <div class="col-9">
+            {% for post in posts %}
+                <div class="card mt-4">
+                    <h5 class="card-header">{{ post.title }}</h5>
+                    <div class="card-body" style='background-color: #EBEBEB'>
+                        {% if post.image %}
+                            <img  src="{{ post.image.url }}" width="304" height="236" class="img-thumbnail float-md-end ms-md-2">
+                        {% endif %}
+                        <p class="card-text" style="text-align: justify;">{{ post.textFild | safe }}</p>
+                        <a href="{% url 'details' post.id %}" class="btn btn-light">See more</a> &nbsp;
+                        {% if user.is_authenticated %}
+                            {% if user.id == post.author.id %}
+                                <button class="btn btn-light"><a href="{% url 'updatePost' post.id %}" style="text-decoration: none;color: black">Update</a></button>
+                                 &nbsp
+                                <button class="btn btn-light"><a href="{% url 'deletePost' post.id %}" style="text-decoration: none;color: black">Delete</a></button>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock %}

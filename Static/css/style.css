@@ -1,0 +1,151 @@
+:root{
+    --pink: #2a1a1e;
+    --pink-light: #e5e0e1;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* --------------------- Post Image ------------------------ */
+/* --------------------- End Post Image ------------------- */
+
+
+.aboutTeam{
+    max-width: 1170px;
+    margin: auto;
+}
+
+.sectionTitle{
+    width: 100%;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.sectionTitle h2 {
+	font-size: 35px;
+	text-transform: capitalize;
+	font-weight: 700;
+	margin-bottom: 36px;
+}
+
+.sectionTitle h2 span {
+	color: #c86d84;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+img{
+    max-width: 100%;
+    vertical-align: middle;
+}
+/* --------------------- team Section ------------------------ */
+.team {
+	padding: 40px 0;
+}
+.teamItem{
+    width: calc((100% /3) - 30px);
+    margin: 0 15px 25px;
+    position: relative;
+    transition: box-shadow 0.5s ease;
+}
+.teamItem:hover{
+    box-shadow: 0 0 10px #b7a6ce;
+}
+
+.teamItem img{
+    width: calc(100% - 60px);
+    /* ----
+    #transition:transform 0.5s ease ;  */
+    transform: translateX(60px);
+    position: relative;
+    z-index: 1;
+}
+.teamItem img:hover {
+	transform: translateX(72px);
+}
+
+.teamItem h3{
+    position: absolute;
+    background-color: var(--pink-light);
+    right: 0;
+    bottom: 15px;
+    padding: 2px 10px;
+    border-radius: 4px;
+    color: #0c4128;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: capitalize;
+    z-index: 2;
+    transition: right 0.5s ease;
+    margin-left: 75px ;
+}
+
+.teamItem:hover h3{
+    right: 15px;
+}
+
+.teamItem h3 span{
+    display: block;
+    font-size: 15px;
+    font-weight: 400;
+    color: #555555;
+}
+
+.teamItem .socialLink{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    transform: translateX(100%) ;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.teamItem:hover .socialLink{
+    transform: translateX(0%) ;
+    opacity: 1;
+}
+
+.teamItem .socialLink a {
+	display: block;
+	height: 37px;
+	width: 37px;
+	line-height: 35px;
+	font-size: 17px;
+	color: #3c5984;
+	border: 1px dotted #355056;
+	border-radius: 50%;
+	margin: 3px 0;
+	text-align: center;
+	transition: all 0.5s ease;
+}
+
+.teamItem .socialLink a:hover{
+    color: var(--pink);
+    border: 2px solid #726abd;
+}
+
+/* -------------------- End team Section -------------------- */
+
+/* -------------------- Responsive ------------------------- */
+@media(max-width: 991px)  {
+    .teamItem{
+        width: calc(50% - 30px);
+    }
+}
+
+@media(max-width: 575px){
+    .teamItem{
+        width: calc(100% - 30px);
+    }
+}
+/* -------------------- End Responsive --------------------- */
+

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Categories
+{% endblock %}
+
+{% block content %}
+    {% for post in categoryPost %}
+        <div class="card mt-4">
+        <h5 class="card-header">{{ post.title }}</h5>
+            <div class="card-body">
+                <p class="card-title">লেখক: {{ post.author }}</p>
+                <p class="card-text">{{ post.textFild | safe }}</p>
+                <a href="{% url 'details' post.id %}" class="btn btn-light">See more</a>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Register Fields
+{% endblock %}
+
+{% block content %}
+    <h2 class="text-center">Register Form</h2>
+    <hr>
+    <div class="col-md-6 offset-md-3">
+        <div class="form-group">
+            <form method="POST" action="">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn btn-secondary">Done</button>
+
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+ About Our Self
+{% endblock %}
+
+{% block content %}
+
+
+    <!-- --------------------------- Team Member ---------------------------------- -->
+    <section class="team">
+        <div class="aboutTeam">
+            <div class="row">
+                <div class="sectionTitle">
+                    <h2>Our <span>Creative</span>Team <span>Member</span>.</h2>
+                </div>
+            </div>
+            <div class="row">
+                {% for about in abouts %}
+                    <div class="teamItem">
+                        <img src="{{ about.img.url }}" alt="Img.png">
+                        <h3> {{ about.name }}<span>{{ about.department }}</span> <span>
+                            {{ about.studentID }}</span></h3>
+                        <div class="socialLink">
+                            <a href="{{ about.linkedIn }}"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="{{ about.facebook }}"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="{{ about.instagram }}"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="{{ about.github }}"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

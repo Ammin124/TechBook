@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Home Page.
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-9">
+            {% for post in object_list %}
+                <div class="card mt-4">
+                    <h5 class="card-header">{{ post.title }}</h5>
+                    <div class="card-body" style='background-color: #ebebeb'>
+                        {% if post.image %}
+                            <img  src="{{ post.image.url }}" width="304" height="236" class="img-thumbnail float-md-end ms-md-2">
+                        {% endif %}
+                        <p style="text-align: justify;" class="card-text">{{ post.textFild | safe }}</p>
+                        <a href="{% url 'details' post.id %}" class="btn btn-light">See more</a>
+                    </div>
+                </div>
+                <!--
+                <div class="card mt-4">
+                    <h5 class="card-header">{{ post.title }}</h5>
+                    <div class="card-body" style='background-color: #ebebeb'>
+                        {% if post.image %}
+                            <img src="{{ post.image.url }}" width="304" height="236" class="img-thumbnail">
+                        {% endif %}
+                        <p class="card-text">{{ post.textFild | safe }}</p>
+                        <a href="{% url 'details' post.id %}" class="btn btn-light">See more</a>
+                    </div>
+                </div> -->
+            {% endfor %}
+        </div>
+        <div class="col-3 mt-4">
+            <!-- <form class="d-flex" role="search" method="POST" action="{% url 'search' %}"> -->
+            <form class="d-flex" role="search" method="POST" action="{% url 'search' %}">
+                {% csrf_token %}
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search Info." name="query">
+                <button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}
