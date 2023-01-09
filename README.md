@@ -24,3 +24,20 @@ After that, the user has the option of publishing blog posts and has post delete
 ## About:
 ![Screenshot from 2023-01-07 23-58-58](https://user-images.githubusercontent.com/104270991/211165029-49ac2632-dca1-4154-9abe-3600bc5d41b6.png)
 
+## Contact us:
+![01](https://user-images.githubusercontent.com/104270991/211370895-ee12b38c-d563-4ba1-97ef-a60a2d6157b0.png)
+![02](https://user-images.githubusercontent.com/104270991/211370931-21f8b0d9-07e2-4898-871f-49f9bda730d5.png)
+
+## Add Post:
+![Screenshot from 2023-01-08 00-11-00](https://user-images.githubusercontent.com/104270991/211371144-b19a1fd3-3b4b-4f49-99cc-6f1b959f2a5f.png)
+
+## Register:
+
+![Screenshot from 2023-01-08 00-11-40](https://user-images.githubusercontent.com/104270991/211371577-7c460844-0bce-4b45-9687-f474f61932bd.png)
+
+## Login:
+![Screenshot from 2023-01-08 00-12-08](https://user-images.githubusercontent.com/104270991/211371600-b3ce509d-cc01-434b-a2e6-de6370c0d5ac.png)
+
+
+## Password Reset:
+![Screenshot from 2023-01-08 00-12-24](https://user-images.githubusercontent.com/104270991/211371630-837adef2-3d0a-48a7-9841-e98354a5001b.png)
